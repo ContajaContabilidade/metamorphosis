@@ -18,7 +18,6 @@ class HighLevel implements ConnectorInterface
 
         $conf->set('group.id', $configManager->get('consumer_group'));
         $conf->set('auto.offset.reset', $configManager->get('offset_reset'));
-        $conf->set('auto.commit.interval.ms', '5000');
 
         if (!$autoCommit) {
             $conf->set('enable.auto.commit', 'false');
