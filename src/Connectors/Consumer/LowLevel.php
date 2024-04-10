@@ -18,10 +18,7 @@ class LowLevel implements ConnectorInterface
         $maxPollIntervalMs = (int) $configManager->get('max_poll_interval_ms');
 
         $conf->set('group.id', $configManager->get('consumer_group'));
-        $conf->set(
-            'max.poll.interval.ms',
-            $maxPollIntervalMs ?: 300000
-        );
+        $conf->set('auto.commit.interval.ms', '5000');
 
         if (!$autoCommit) {
             $conf->set('enable.auto.commit', 'false');
