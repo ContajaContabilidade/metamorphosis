@@ -15,8 +15,11 @@ class LowLevel implements ConnectorInterface
     public function getConsumer(bool $autoCommit, AbstractConfigManager $configManager): ConsumerInterface
     {
         $conf = $this->getConf();
+        $maxPollIntervalMs = (int) $configManager->get('max_poll_interval_ms');
+
         $conf->set('group.id', $configManager->get('consumer_group'));
         $conf->set('auto.commit.interval.ms', '5000');
+
         if (!$autoCommit) {
             $conf->set('enable.auto.commit', 'false');
         }
