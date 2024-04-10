@@ -16,6 +16,7 @@ class LowLevel implements ConnectorInterface
     {
         $conf = $this->getConf();
         $conf->set('group.id', $configManager->get('consumer_group'));
+        $conf->set('auto.commit.interval.ms', '5000');
         if (!$autoCommit) {
             $conf->set('enable.auto.commit', 'false');
         }
