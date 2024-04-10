@@ -42,7 +42,11 @@
         {
             "name": "Boitata Team",
             "email": "boitata@leroymerlin.com.br"
-        }
+        },
+        {
+            "homepage": "https://github.com/ContajaContabilidade",
+            "role": "contributing developer"
+        }        
     ],
     "extra": {
         "laravel": {
